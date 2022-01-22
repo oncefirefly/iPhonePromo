@@ -1,12 +1,14 @@
-const scroll = () => {
+const smoothScroll = () => {
   const links = document.querySelectorAll(".header-menu__item a");
   const detailsLink = document.querySelector(
     ".card-details__link-characteristics"
   );
 
+  const linksArray = [...links, detailsLink];
+
   seamless.polyfill();
 
-  links.forEach((link) => {
+  linksArray.forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
 
@@ -29,19 +31,7 @@ const scroll = () => {
         );
       }
     });
-
-    detailsLink.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      const detailsId = detailsLink.getAttribute("href").substring(1);
-      const detailsSection = document.getElementById(detailsId);
-
-      seamless.scrollIntoView(detailsSection, {
-        behavior: "smooth",
-        block: "start",
-      });
-    });
   });
 };
 
-scroll();
+smoothScroll();
