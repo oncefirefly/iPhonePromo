@@ -4,8 +4,6 @@ const tabs = () => {
   const tabsPrice = document.querySelector(".card-details__price");
   const tabsImg = document.querySelector(".card__image_item");
 
-  console.dir(tabsImg);
-
   const tabsOptions = [
     {
       name: "Graphite",
